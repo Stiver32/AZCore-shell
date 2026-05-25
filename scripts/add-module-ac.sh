@@ -3,6 +3,7 @@
 source "$HOME/scripts/ac-config.sh"
 
 MODULE_URL="$1" #first argument passed
+MODULE_NAME=$(basename "$MODULE_URL" .git)
 
 if [ -z "$MODULE_URL" ]; then
     echo "Missing module URL"
