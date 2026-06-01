@@ -1,17 +1,26 @@
 #!/bin/bash
 
-source "$HOME/scripts/ac-config.sh"
+# Load shared AzerothCore paths/settings
+source "$HOME/scripts/ac-config.sh" 
 
+#Stop
 echo "Stopping AzerothCore..."
 "$HOME/scripts/stop-ac.sh"
 
-echo "Updating AzerothCore source..."
+#Update Source/Core
+echo "Updating AzerothCore SOURCE..."
 "$HOME/scripts/update-source-ac.sh"
 
+# Update Modules
+echo "Updating AzerothCore MODULES..."
+"$HOME/scripts/update-modules-ac.sh"
+
+#Rebuild
 echo "Rebuilding AzerothCore..."
 "$HOME/scripts/rebuild-ac.sh"
 
-echo "Starting AzerothCore..."
+#Start
+echo "Starting AzerothCore services..."
 "$HOME/scripts/start-ac.sh"
 
-echo "Maintenance complete."
+echo "Maintenance completed."w
