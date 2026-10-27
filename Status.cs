@@ -21,8 +21,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 async Task<string> CheckServers(String serverType, int portNum)
 {
 	String status;
